@@ -1,0 +1,345 @@
+* {
+    font-family: 'Open sans';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.803);
+    backdrop-filter: blur(20px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 41px;
+
+    color: white;
+
+    font-size: 75%;
+}
+
+.nav-links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-link {
+    list-style: none;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: rgb(219, 219, 219);
+    font-weight: lighter;
+
+    transition: 200ms cubic-bezier(0.4, 0, 0.63, 1.12);
+
+    user-select: none;
+}
+
+.nav-links a:hover{
+    color: white;
+    font-weight: 100;
+}
+
+.panier a{
+    text-decoration: none;
+    color: white;
+}
+
+.toggle-button{
+    width: 2rem;
+    height: 2rem;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.toggle-button .bar{
+    background-color: white;
+
+    width: 48%;
+    height: 1px;
+
+    transition: .5s ease-in-out;
+}
+
+.toggle-button .bar:nth-child(2) {
+    margin-top: -18px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .navbar {
+        justify-content: space-between;
+        height: 47px;
+
+        transition: 200ms ease-in-out;
+    }
+
+    .navbar.toggled {
+        /* border-bottom: 1px solid rgb(255, 255, 255); */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 47px;
+        left: 0;
+
+        background-color: rgba(0, 0, 0, 0.803);
+        backdrop-filter: blur(5px);
+
+        width: 100%;
+        height: 0;
+
+        transition: .5s ease-in-out;
+    }
+
+    .nav-links.toggled{
+        display: flex;
+
+        height: 520px;
+    }
+
+    .nav-links ul {
+        display: none;
+
+        flex-direction: column;
+
+        padding: 0px 50px 0px 50px;
+
+        font-size: 140%;
+
+        transition: 200ms;
+    }
+
+    .nav-links ul.toggled{
+        display: flex;
+
+        width: 100%;
+    }
+
+    .nav-link {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 0;
+        padding-right: 0;
+
+        border-bottom: 1px solid rgb(109, 109, 109);
+
+        opacity: 0;
+        height: 0;
+
+        transform: translateY(-20px);
+
+        transition: .5s ease-in-out;
+    }
+
+    .nav-link:last-child{
+        border-bottom: none;
+    }
+
+    .nav-link.show{
+        opacity: 1;
+        height: 100%;
+
+        transform: translateY(0px);
+        background-color: rgba(0, 0, 0);
+    }
+
+    .panier {
+        margin-right: 1rem;
+
+        transition: 150ms ease-in-out;
+        opacity: 1;
+    }
+
+    .panier.toggled {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    .toggle-button {
+        display: flex;
+
+        margin-left: 1rem;
+    }
+
+    .toggle-button.toggled .bar:nth-child(1) {
+        transform: translateY(3.5px) rotate(45deg);
+    }
+    .toggle-button.toggled .bar:nth-child(2) {
+        transform: translateY(-3.5px) rotate(-45deg);
+    }
+}
+
+/* Contents */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white
+}
+
+.iphone-14-pro {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+.iphone-14-pro .container {
+    padding-top: 80px;
+}
+
+.section .header-text {
+    font-size: 3rem;
+
+    padding: 0;
+    margin: 0;
+}
+
+.section .sub-text {
+    padding: 0;
+    margin: 0;
+
+    font-weight: lighter;
+    font-size: 1.7rem;
+
+    padding-bottom: 8px;
+}
+
+.container .links {
+    padding-bottom: 10px;
+}
+
+.container .links a {
+    color: rgb(55, 124, 214);
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    user-select: none;
+
+    padding: 0px 15px 0px 15px;
+}
+
+.section .links a:hover {
+    text-decoration: underline;
+}
+
+.section .shrunk {
+    display: none;
+}
+
+/* iPhone 14 */
+.iphone-14 .header-text{
+    color: black;
+}
+
+.iphone-14 .sub-text{
+    color: black;
+
+    letter-spacing: .001rem;
+}
+
+.iphone-14 .sub-sub-text{
+    color: rgb(133, 133, 133);
+
+    margin: 0;
+    padding: 0;
+
+    font-weight: lighter;
+
+    padding-bottom: 10px;
+}
+
+.iphone-14 .container {
+    padding-top: 50px;
+}
+
+.iphone-14 {
+    margin-top: 10px;
+
+    background-color: rgba(214, 214, 214, 0.137);
+}
+
+/* Apple Watch */
+.apple-watch-ultra {
+    margin-top: 10px;
+
+    background-color: rgba(214, 214, 214, 0.137);
+}
+
+.apple-watch-ultra .header-text {
+    color: black;
+    text-transform: uppercase;
+
+    font-weight: bold;
+
+    padding: 0;
+    margin: 0;
+}
+
+.apple-watch-ultra .sub-text {
+    color: orange;
+
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+
+    padding: 0;
+    margin: 0;
+
+    padding-bottom: 10px;
+}
+
+.apple-watch-ultra .sub-sub-text {
+    color: black;
+
+    font-size: 1.6rem;
+
+    margin: 0;
+    padding: 0;
+
+    padding-bottom: 15px;
+}
+
+.apple-watch-ultra .container {
+    padding-top: 60px;
+}
+
+.apple-watch-ultra .links {
+    padding-bottom: 30px;
+}
+
+@media (max-width: 800px) {
+    .section .shrunk {
+        display: block;
+    }   
+
+    .section .expanded {
+        display: none;
+    }
+}
