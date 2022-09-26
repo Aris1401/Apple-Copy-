@@ -91,13 +91,11 @@ body {
         justify-content: space-between;
         height: 47px;
 
-        background-color: rgba(0, 0, 0, 1);
-
         transition: 200ms ease-in-out;
     }
 
     .navbar.toggled {
-        /* border-bottom: 1px solid rgb(255, 255, 255); */
+        background-color: rgba(0, 0, 0, 1);
     }
 
     .nav-links {
